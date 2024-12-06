@@ -28,22 +28,15 @@ def main():
 
 def vert(li):
     vertical_strings = []
-    for j in range(len(li[0])):
-        vertical_string = ""
-        for i in li:
-            vertical_string += i[j]
+    for j in range(len(li[0])):                     # For each column
+        vertical_string = ""                        # Collect letters
+        for i in li:                                # For each row
+            vertical_string += i[j]                 # Collect that column's letter from the row
         vertical_strings.append(vertical_string)
     return vertical_strings
 
 def diag(li):
-    diagonal_strings = []
-    for col in (range(len(li[0])-1)):        # For every Column
-        diagonal_string = ""
-        i = 0
-        for row in li:
-            diagonal_string += row[col+i]
-            i += 1
-        diagonal_strings.append(diagonal_string)
+    diagonal_strings = [li[0][0] + li[1][1] + li[2][2], li[0][1] + li[1][2] + li[2][3], li[0][2] + li [1][3] + li[2][4]]
     return diagonal_strings
 
 
